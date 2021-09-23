@@ -110,7 +110,7 @@ export default class Ui {
   createFileButton() {
     const button = make('div', [ this.CSS.button ]);
 
-    button.innerHTML = this.config.buttonContent || `${buttonIcon} ${this.api.i18n.t('Select an Image')}`;
+    button.innerHTML = this.config.buttonContent || `${buttonIcon} ${this.api.i18n.t('Select a Video')}`;
 
     button.addEventListener('click', () => {
       this.onSelectFile();
@@ -179,6 +179,7 @@ export default class Ui {
       attributes.loop = true;
       attributes.muted = true;
       attributes.playsinline = true;
+      attributes.controls = true;
 
       /**
        * Change event to be listened

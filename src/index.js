@@ -94,7 +94,7 @@ export default class ImageTool {
   static get toolbox() {
     return {
       icon: ToolboxIcon,
-      title: 'Image',
+      title: 'Video',
     };
   }
 
@@ -116,8 +116,8 @@ export default class ImageTool {
       endpoints: config.endpoints || '',
       additionalRequestData: config.additionalRequestData || {},
       additionalRequestHeaders: config.additionalRequestHeaders || {},
-      field: config.field || 'image',
-      types: config.types || 'image/*',
+      field: config.field || 'video',
+      types: config.types || 'video/*',
       captionPlaceholder: this.api.i18n.t(config.captionPlaceholder || 'Caption'),
       buttonContent: config.buttonContent || '',
       uploader: config.uploader || undefined,
@@ -223,20 +223,20 @@ export default class ImageTool {
       /**
        * Paste HTML into Editor
        */
-      tags: [ 'img' ],
+      tags: [ 'video' ],
 
       /**
        * Paste URL of image into the Editor
        */
       patterns: {
-        image: /https?:\/\/\S+\.(gif|jpe?g|tiff|png)$/i,
+        image: /https?:\/\/\S+\.(avi|mov|mp4|webm|mkv)$/i,
       },
 
       /**
        * Drag n drop file from into the Editor
        */
       files: {
-        mimeTypes: [ 'image/*' ],
+        mimeTypes: [ 'video/*' ],
       },
     };
   }
