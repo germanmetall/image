@@ -126,7 +126,7 @@ export default class Ui {
    * @returns {void}
    */
   showPreloader(src) {
-    this.nodes.imagePreloader.style.backgroundImage = `url(${src})`;
+    //this.nodes.imagePreloader.style.backgroundImage = `url(${src})`;
 
     this.toggleStatus(Ui.status.UPLOADING);
   }
@@ -247,6 +247,9 @@ export default class Ui {
    * @returns {void}
    */
   applyTune(tuneName, status) {
+    if (tuneName == 'useAsThumbnail') document.querySelectorAll('.image-tool--useAsThumbnail').forEach(el => {
+      el.classList.remove('image-tool--useAsThumbnail');
+    });
     this.nodes.wrapper.classList.toggle(`${this.CSS.wrapper}--${tuneName}`, status);
   }
 }

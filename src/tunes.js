@@ -84,7 +84,9 @@ export default class Tunes {
       });
 
       el.dataset.tune = tune.name;
-      el.classList.toggle(this.CSS.buttonActive, toolData[tune.name]);
+      if (toolData.useAsThumbnail && tune.name == 'useAsThumbnail'){
+        el.classList.add("cdx-settings-button--active");
+      }
 
       this.buttons.push(el);
 
