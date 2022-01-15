@@ -210,7 +210,12 @@ export default class ImageTool {
    * @returns {Element}
    */
   renderSettings() {
-    return this.tunes.render(this.data);
+    console.log(document.querySelector(`#editor img[src='${this.data.file.url}']`).parentElement.parentElement.classList.contains('image-tool--useAsThumbnail'));
+    this._data.useAsThumbnail = document.querySelector(`#editor img[src='${this.data.file.url}']`).parentElement.parentElement.classList.contains('image-tool--useAsThumbnail');
+    return this.tunes.render({
+      ...this.data,
+      useAsThumbnail: document.querySelector(`#editor img[src='${this.data.file.url}']`).parentElement.parentElement.classList.contains('image-tool--useAsThumbnail')
+    });
   }
 
   /**

@@ -246,6 +246,9 @@ export default class Ui {
    * @returns {void}
    */
   applyTune(tuneName, status) {
+    if (tuneName == 'useAsThumbnail') document.querySelectorAll('.image-tool--useAsThumbnail').forEach(el => {
+      el.classList.remove('image-tool--useAsThumbnail');
+    });
     this.nodes.wrapper.classList.toggle(`${this.CSS.wrapper}--${tuneName}`, status);
   }
 }
